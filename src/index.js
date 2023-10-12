@@ -3,11 +3,21 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ApiProvider from './Contexts/ApiContext';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+     <ApiProvider>
+      <BrowserRouter>
+        <Routes>
+          {/* Homepage route  */}
+          <Route path="/" element={<App />}/>
+          {/* API fetch route */}
+        </Routes>
+      </BrowserRouter>
+    </ApiProvider>
   </React.StrictMode>
 );
 
