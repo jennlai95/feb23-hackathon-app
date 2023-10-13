@@ -2,10 +2,11 @@ import { createContext, useState } from "react";
 
 export const ApiContext = createContext(null);
 
-export default function ApiProvider  ({children}){
+let apiKey = process.env.REACT_APP_API_KEY;
 
-	const [apiUrl, setApiUrl] = useState("https://www.googleapis.com/books/v1");
+export default function ApiProvider  ({children}) {
 
+	const [apiUrl, setApiUrl] = useState("https://www.googleapis.com/books/v1/volumes?q=");
 
 	return (
 		<ApiContext.Provider value={

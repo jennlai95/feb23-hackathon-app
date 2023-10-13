@@ -5,16 +5,23 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ApiProvider from './Contexts/ApiContext';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import BookSearchByName from './pages/BookSearchByName';
+
+import NavSearchBar from './components/NavSearchBar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
      <ApiProvider>
       <BrowserRouter>
+
+        <NavSearchBar />
+
         <Routes>
           {/* Homepage route  */}
           <Route path="/" element={<App />}/>
           {/* API fetch route */}
+          <Route path="/:bookName" element={<BookSearchByName />} />
         </Routes>
       </BrowserRouter>
     </ApiProvider>
