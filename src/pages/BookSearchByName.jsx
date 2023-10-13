@@ -49,6 +49,9 @@ export default function BookSearchByName() {
       		{searchResults.map((result) => (
         <div key={result.id}>
           <h1>{result.volumeInfo.title} - {result.volumeInfo.authors}</h1>
+		  <a href = {result.volumeInfo.previewLink}>
+		  <img src = {result.volumeInfo.imageLinks.thumbnail} alt = {result.volumeInfo.title}/>
+		  </a>
         </div>
       ))}
 		</div>
